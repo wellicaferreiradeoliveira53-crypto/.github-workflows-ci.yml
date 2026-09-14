@@ -1,0 +1,152 @@
+name: Pipeline de Integração Continúa (CI)
+
+# Gatilhos: Dispara o pipeline em Pushes e Pull Requests na Branch principal
+on:
+ push:
+  Branches:["main,"master]
+Pull_request:
+  Branches:["main","master"]
+jobs:
+  testes-e-validacao:
+# Define o sistema operacional do Runner(máquina virtual)
+
+runs-on: ubuntu-latest
+
+steps:
+#step1: Baixa o código do repositório para o Runner
+-name: Baixar Código-Fonte
+uses: actions/checkoutt@v4name: Pipeline de Integração Continúa (CI)
+
+# Gatilhos: Dispara o pipeline em Pushes e Pull Requests na Branch principal
+on:
+ push:
+  Branches:["main,"master]
+Pull_request:
+  Branches:["main","master"]
+jobs:
+  testes-e-validacao:
+# Define o sistema operacional do Runner(máquina virtual)
+
+runs-on: ubuntu-latest
+
+steps:
+#step1: Baixa o código do repositório para o Runner
+-name: Baixar Código-Fonte
+uses: actions/checkoutt@v4
+
+# Step 2: Configura o ambiente Node.js
+-name: Configurar
+uses: actions/setup-node@v4
+
+with:
+  node-version: '20'
+  cache: 'npm'
+
+#step 3: Instala dependencias de formaconsistente
+-name: Instalar dependencias
+run: npm ci
+
+# step 4: Análise Estática com Linter
+-name: Executar Linter
+run: npm run lint
+
+# step 5: Testes Unitários
+-name: Executar Testes Automatizados
+run: npm test
+
+# Step 2: Configura o ambiente Node.js
+-name: Configurarname: Pipeline de Integração Continúa (CI)
+
+# Gatilhos: Dispara o pipeline em Pushes e Pull Requests na Branch principal
+on:
+ push:
+  Branches:["main,"master]
+Pull_request:
+  Branches:["main","master"]
+jobs:
+  testes-e-validacao:
+# Define o sistema operacional do Runner(máquina virtual)
+
+runs-on: ubuntu-latest
+
+steps:
+#step1: Baixa o código do repositório para o Runner
+-name: Baixar Código-Fonte
+uses: actions/checkoutt@v4name: Pipeline de Integração Continúa (CI)
+
+# Gatilhos: Dispara o pipeline em Pushes e Pull Requests na Branch principal
+on:
+ push:
+  Branches:["main,"master]
+Pull_request:
+  Branches:["main","master"]
+jobs:
+  testes-e-validacao:
+# Define o sistema operacional do Runner(máquina virtual)
+
+runs-on: ubuntu-latest
+
+steps:
+#step1: Baixa o código do repositório para o Runner
+-name: Baixar Código-Fonte
+uses: actions/checkoutt@v4
+
+# Step 2: Configura o ambiente Node.js
+-name: Configurar
+uses: actions/setup-node@v4
+
+with:
+  node-version: '20'
+  cache: 'npm'
+
+#step 3: Instala dependencias de formaconsistente
+-name: Instalar dependencias
+run: npm ci
+
+# step 4: Análise Estática com Linter
+-name: Executar Linter
+run: npm run lint
+
+# step 5: Testes Unitários
+-name: Executar Testes Automatizados
+run: npm test
+
+# Step 2: Configura o ambiente Node.js
+-name: Configurar
+uses: actions/setup-node@v4
+
+with:
+  node-version: '20'
+  cache: 'npm'
+
+#step 3: Instala dependencias de formaconsistente
+-name: Instalar dependencias
+run: npm ci
+
+# step 4: Análise Estática com Linter
+-name: Executar Linter
+run: npm run lint
+
+# step 5: Testes Unitários
+-name: Executar Testes Automatizados
+run: npm test
+uses: actions/setup-node@v4
+
+with:
+  node-version: '20'
+  cache: 'npm'
+
+#step 3: Instala dependencias de formaconsistente
+-name: Instalar dependencias
+run: npm ci
+
+# step 4: Análise Estática com Linter
+-name: Executar Linter
+run: npm run lint
+
+# step 5: Testes Unitários
+-name: Executar Testes Automatizados
+run: npm test
+
+-name: simula falha
+run: exit 1
